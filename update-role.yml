@@ -30,3 +30,11 @@
               verbs: ["get", "list", "create", "update", "delete"]
         dest: jenkins-role.yaml
       when: not file_stat.stat.exists
+
+
+
+
+# The playbook first checks if the file "jenkins-role.yaml" exists (file_stat.stat.exists).
+# If the file exists, it adds a new RBAC rule block to the file.
+# If the file doesn't exist, it creates the file with a predefined RBAC rule content.
+# This playbook is useful for ensuring that the "jenkins-role.yaml" file contains the required RBAC rules for interacting with Kubernetes resources.
